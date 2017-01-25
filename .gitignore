@@ -1,2 +1,5 @@
 # Setting files
 .settings
+
+# Compiled binaries
+bin
