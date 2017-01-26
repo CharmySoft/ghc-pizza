@@ -19,7 +19,7 @@ public class Square {
 	}
 	
 	public int getHeight() {
-		return p2.y - p1.x;
+		return p2.y - p1.y;
 	}
 
 	public boolean overlap(Square c) {
