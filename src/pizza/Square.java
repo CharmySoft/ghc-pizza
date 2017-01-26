@@ -24,15 +24,14 @@ public class Square {
 
 	public boolean overlap(Square c) {
 		// If one rectangle is on left side of other
-		if (this.p2.x > c.p1.x || c.p2.x > this.p1.x)
+		if (this.p2.x <= c.p1.x || c.p2.x <= this.p1.x)
 		    return false;
 
 		// If one rectangle is above other
-		if (this.p2.y < c.p1.y || c.p2.y < this.p1.y)
+		if (this.p2.y <= c.p1.y || c.p2.y <= this.p1.y)
 		    return false;
 
 		return true;
 	}
-	
 
 }
