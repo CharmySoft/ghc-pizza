@@ -3,7 +3,7 @@ Google Hash Code Challenges -- Pizza
 
 Introduction
 ------------------------
-This repository is my own attempt to solve some of the Google Hash Code questions. The problem statement can be found [here](pizza.pdf).
+This repository is my own attempt to solve some of the Google Hash Code questions. This question is on Google Hash Code 2017 Practice Round. The problem statement can be found [here](pizza.pdf).
 
 
 Licensing
