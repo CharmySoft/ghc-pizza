@@ -88,8 +88,8 @@ public class Pizza {
 				for(int[] d :divisors) {
 					boolean r = pc.cuts(new Square(new Point(j, i), new Point(j + d[0], i + d[1])),
 							this);
-					System.out.println("Trying to cut a " + d[0] + " * " + d[1] + 
-							" slice on (" + j + ", " + i + ") " + (r? "Success": "Failed"));
+//					System.out.println("Trying to cut a " + d[0] + " * " + d[1] + 
+//							" slice on (" + j + ", " + i + ") " + (r? "Success": "Failed"));
 				}
 			}
 		}
