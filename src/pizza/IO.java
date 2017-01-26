@@ -9,6 +9,7 @@ public class IO {
 	public boolean read(String filename) throws FileNotFoundException
 	{
 		Scanner in = new Scanner(new File(filename)); 
+		try{
 			String[] headInfo = in.nextLine().split(" ");
 			int[] head = Arrays.stream(headInfo).mapToInt(Integer::parseInt).toArray();
 			Pizza pizza = new Pizza(head[0], head[1], head[2], head[3]);
@@ -20,7 +21,12 @@ public class IO {
 			}
 			pizza.print();
 			pizza.cut();
+		} catch (Exception e){
+			e.printStackTrace();
+			return false;
+		} finally {
 			in.close();
+		}
 		return true;
 	}
 }
