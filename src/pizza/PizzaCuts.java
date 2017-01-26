@@ -11,7 +11,7 @@ public class PizzaCuts {
 	
 	public boolean cuts(Square c, Pizza p) {
 		// Check if the cut is outside the pizza
-		if(c.p2.x >= p.getColumn() || c.p2.y >= p.getRow())
+		if(c.p2.x > p.getColumn() || c.p2.y > p.getRow())
 			return false;
 		
 		// Check if the cut has the minimum ingredients
