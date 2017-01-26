@@ -2,8 +2,8 @@ package pizza;
 
 public class Square {
 	// The square if represented using the upper left point and lower right point.
-	public Point p1; // Upper left
-	public Point p2; // Lower right
+	public final Point p1; // Upper left
+	public final Point p2; // Lower right
 	
 	public Square(Point p1, Point p2) {
 		if(p1.compare(p2) != -1) {
@@ -21,5 +21,18 @@ public class Square {
 	public int getHeight() {
 		return p2.y - p1.x;
 	}
+
+	public boolean overlap(Square c) {
+		// If one rectangle is on left side of other
+		if (this.p2.x > c.p1.x || c.p2.x > this.p1.x)
+		    return false;
+
+		// If one rectangle is above other
+		if (this.p2.y < c.p1.y || c.p2.y < this.p1.y)
+		    return false;
+
+		return true;
+	}
+	
 
 }
