@@ -14,7 +14,7 @@ public class Pizza {
 		this.c = column;
 		this.l = minIngredient;
 		this.h = maxCells;
-		this.content = new char[r][c];
+		this.content = new char[column][row];
 	}
 	
 	public int getRow() {
@@ -33,12 +33,20 @@ public class Pizza {
 		return this.h;
 	}
 	
-	public char getCell(int row, int column) {
-		return this.content[row][column];
+	public char getCell(int x, int y) {
+		return this.content[x][y];
 	}
 	
-	public void setCell(int row, int column, char content) {
-		this.content[row][column] = content;
+	public char getCell(Point p) {
+		return this.content[p.x][p.y];
+	}
+	
+	public void setCell(int x, int y, char content) {
+		this.content[x][y] = content;
+	}
+	
+	public void setCell(Point p, char content) {
+		this.content[p.x][p.y] = content;
 	}
 	
 	public int countM(Square slice) {
