@@ -11,17 +11,21 @@ public class PizzaCuts {
 	
 	public boolean cuts(Square c, Pizza p) {
 		// Check if the cut is outside the pizza
-		if(c.p2.x > p.getColumn() || c.p2.y > p.getRow())
+		if(c.p2.x > p.getColumn() || c.p2.y > p.getRow()) {
+			// System.out.print(", due to outside the pizza, ");
 			return false;
+		}
 		
 		// Check if the cut has the minimum ingredients
-		if (p.countM(c) < p.getL() || p.countT(c) < p.getL()) {
+		if (!p.hasEnoughIngredients(c)) {
+			// System.out.print(", due to not enough ingredients, ");
 			return false;
 		}
 		
 		// Check if the cut has overlap
 		for (Square cut: this.cuts) {
 			if (cut.overlap(c)) {
+				// System.out.print(", due to overlap, ");
 				return false;
 			}
 		}
