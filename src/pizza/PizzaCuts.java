@@ -16,15 +16,12 @@ public class PizzaCuts {
 		
 		// Check if the cut has the minimum ingredients
 		if (p.countM(c) < p.getL() || p.countT(c) < p.getL()) {
-			System.out.println("no minimun ing " + p.countM(c) + "," + p.countT(c));
 			return false;
 		}
-			
 		
 		// Check if the cut has overlap
 		for (Square cut: this.cuts) {
 			if (cut.overlap(c)) {
-				System.out.println("overlapped");
 				return false;
 			}
 		}
