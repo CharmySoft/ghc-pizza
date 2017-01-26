@@ -97,8 +97,11 @@ public class Pizza {
 	}
 	
 	public void cut() {
-		ArrayList<int[]> divisors = Algo.getDivisors(h);
 		PizzaCuts pc = new PizzaCuts();
+		ArrayList<int[]> divisors = new ArrayList<int[]>();
+		for(int div = h; div >= 2; div--) {
+			divisors.addAll(Algo.getDivisors(div));
+		}
 		for (int i = 0; i < this.r; i++) {
 			for (int j = 0; j < this.c; j++) {
 				for(int[] d :divisors) {
@@ -106,6 +109,7 @@ public class Pizza {
 					boolean r = pc.cuts(new Square(new Point(j, i), new Point(j + d[0], i + d[1])),
 							this);
 					// System.out.println(r? "Success": "Failed");
+					if (r) break;
 				}
 			}
 		}
