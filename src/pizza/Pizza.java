@@ -7,7 +7,7 @@ public class Pizza {
 	private int c;
 	private int l;
 	private int h;
-	private char[][] content;
+	private char[][] content; // It's [column][row] or [x][y]
 	
 	public Pizza(int row, int column, int minIngredient, int maxCells) {
 		this.r = row;
@@ -74,7 +74,7 @@ public class Pizza {
 	public void print() {
 		for (int i = 0; i < this.r; i++) {
 			for (int j = 0; j < this.c; j++) {
-				System.out.print(this.getCell(i, j));
+				System.out.print(this.getCell(j, i));
 			}
 			System.out.print("\n");
 		}
@@ -86,10 +86,10 @@ public class Pizza {
 		for (int i = 0; i < this.r; i++) {
 			for (int j = 0; j < this.c; j++) {
 				for(int[] d :divisors) {
-					boolean r = pc.cuts(new Square(new Point(i, j), new Point(i + d[0], j + d[1])),
+					boolean r = pc.cuts(new Square(new Point(j, i), new Point(j + d[0], i + d[1])),
 							this);
 					System.out.println("Trying to cut a " + d[0] + " * " + d[1] + 
-							" slice on (" + i + ", " + j + ") " + (r? "Success": "Failed"));
+							" slice on (" + j + ", " + i + ") " + (r? "Success": "Failed"));
 				}
 			}
 		}

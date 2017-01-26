@@ -15,7 +15,7 @@ public class IO {
 			for (int i = 0; i < pizza.getRow(); i++) {
 				String line = in.nextLine();
 				for (int j = 0; j < pizza.getColumn(); j++) {
-					pizza.setCell(i, j, line.charAt(j));
+					pizza.setCell(j, i, line.charAt(j));
 				}
 			}
 			pizza.print();
