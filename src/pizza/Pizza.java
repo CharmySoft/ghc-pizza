@@ -51,8 +51,8 @@ public class Pizza {
 	
 	public int countM(Square slice) {
 		int count = 0;
-		for (int i = slice.p1.x; i < slice.getWidth(); i++) {
-			for (int j = slice.p1.y; j < slice.getHeight(); j++) {
+		for (int i = slice.p1.x; i < slice.p2.x; i++) {
+			for (int j = slice.p1.y; j < slice.p2.y; j++) {
 				if (this.getCell(i, j) == 'M')
 					count++;
 			}
@@ -62,8 +62,8 @@ public class Pizza {
 	
 	public int countT(Square slice) {
 		int count = 0;
-		for (int i = slice.p1.x; i < slice.getWidth(); i++) {
-			for (int j = slice.p1.y; j < slice.getHeight(); j++) {
+		for (int i = slice.p1.x; i < slice.p2.x; i++) {
+			for (int j = slice.p1.y; j < slice.p2.y; j++) {
 				if (this.getCell(i, j) == 'T')
 					count++;
 			}
